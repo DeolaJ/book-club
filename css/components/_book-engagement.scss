@@ -1,0 +1,115 @@
+// Book Engagement
+
+.book-engagement {
+  margin-top: 9px;
+
+  > * + * {
+    margin-left: 1.25rem;
+  }
+
+  p {
+    font-size: 0.75rem;
+    line-height: 0.875rem;
+  }
+
+  &__ratings {
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: '';
+      height: 25px;
+      width: 1px;
+      background-color: $grey-light;
+      top: 50%;
+      right: -0.625rem;
+      transform: translateY(-50%);
+    }
+
+    > p {
+      margin-bottom: 5px;
+    }
+  }
+
+  &__stars {
+    svg + svg {
+      margin-left: 3px;
+    }
+  }
+
+  &__users {
+    > div + div {
+      margin-left: 11px;
+    }
+
+    p {
+      margin-bottom: 0;
+      margin-top: 0.25rem;
+      font-size: 0.75rem;
+      line-height: 0.875rem;
+    }
+
+    div {
+      flex-direction: column;
+
+      &:last-child p {
+        margin-top: 6px;
+      }
+    }
+  }
+
+  &.thumbnail &__ratings::after {
+    background-color: $grey-dark;
+  }
+
+  &.thumbnail &__users {
+    svg {
+      height: 15px;
+    }
+
+    div:first-child svg {
+      width: 20px;
+    }
+
+    div:last-child svg {
+      width: 17px;
+    }
+
+    div p {
+      margin-top: 0.25rem;
+    }
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    &.thumbnail &__ratings::after {
+      display: none;
+    }
+
+    &.thumbnail {
+      display: block;
+    }
+
+    &.thumbnail > * + * {
+      margin-left: 0;
+      margin-top: 10px;
+    }
+
+    &.thumbnail &__users {
+      > div + div {
+        margin-left: 10px;
+      }
+
+      svg {
+        height: 10px;
+      }
+
+      div:first-child svg {
+        width: 13px;
+      }
+
+      div:last-child svg {
+        width: 11px;
+      }
+    }
+  }
+}

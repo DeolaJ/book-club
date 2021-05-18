@@ -1,0 +1,7 @@
+// Books Grid
+
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 323px);
+  grid-gap: 1.25rem;
+}

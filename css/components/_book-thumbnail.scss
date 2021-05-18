@@ -1,0 +1,173 @@
+// Book Thumbnail
+
+.book-thumbnail {
+  width: 140px;
+  height: 210px;
+  position: relative;
+  box-shadow: 0px 30px 30px rgba(0, 0, 0, 0.15);
+
+  + .book-thumbnail {
+    margin-left: 5px;
+
+    @media (min-width: $breakpoint-tablet) {
+      margin-left: 1.25rem;
+    }
+  }
+
+  &__content {
+    padding: 15px 14px 15px 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.607988) 0%, #000000 79.7%);
+    visibility: hidden;
+    transition: 0.4s ease;
+
+    > div {
+      width: 100%;
+    }
+
+    @media (min-width: $breakpoint-tablet) {
+      padding: 1.875rem;
+    }
+  }
+
+  &.mobile {
+    .book-thumbnail__content {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .book-thumbnail__control button {
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  &__image,
+  &__image img {
+    width: 100%;
+  }
+
+  &__status {
+    margin: 0;
+    margin-bottom: 7px;
+    font-size: 0.75rem;
+    line-height: 15px;
+
+    &--green {
+      color: $green;
+    }
+
+    &--red {
+      color: $red;
+    }
+
+    @media (min-width: $breakpoint-tablet) {
+      margin-bottom: 19px;
+    }
+  }
+
+  &__details {
+    color: $white;
+
+    h4 {
+      margin-top: 0;
+      margin-bottom: 6px;
+      font-size: 0.875rem;
+      line-height: 16px;
+      font-weight: 700;
+    }
+
+    > p {
+      font-size: 12px;
+      line-height: 15px;
+      margin-top: 0;
+    }
+
+    &-authors {
+      margin-bottom: 0.25rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    &-genre {
+      margin-top: 0;
+      margin-bottom: 22px;
+    }
+
+    &--bold {
+      font-weight: 400;
+    }
+
+    > p + p {
+      margin-top: 3px;
+    }
+
+    @media (min-width: $breakpoint-tablet) {
+      h4 {
+        font-size: 1.125rem;
+        line-height: 21px;
+      }
+
+      &-authors {
+        margin-bottom: 1.25rem;
+        white-space: none;
+        overflow: visible;
+      }
+
+      &--bold {
+        font-weight: 700;
+      }
+    }
+  }
+
+  &__control {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+
+    > * {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+    }
+
+    > button {
+      position: absolute;
+      height: 27px;
+      width: 27px;
+      z-index: 10;
+      opacity: 0;
+    }
+
+    .cog {
+      background-color: $white;
+      height: 27px;
+      width: 27px;
+      border-radius: 50%;
+    }
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 220px;
+    height: 330px;
+
+    &:hover {
+      .book-thumbnail__content {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+}

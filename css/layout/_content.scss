@@ -1,0 +1,44 @@
+// Main Content
+
+.content {
+  background: #fefefe;
+  padding: 1.25rem 1.875rem;
+  box-shadow: inset -10px 0px 40px rgba(0, 0, 0, 0.05);
+
+  &__category {
+    margin-bottom: 4rem;
+
+    &.featured-books {
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      margin-top: 0;
+      font-weight: 400;
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid $grey-lighter;
+      font-size: 0.875rem;
+      line-height: 1rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    @media (min-width: $breakpoint-tablet) {
+      margin-bottom: 2.5rem;
+
+      h2 {
+        margin-bottom: 23px;
+        padding-bottom: 0.875rem;
+      }
+
+      &.featured-books {
+        margin-bottom: 2.5rem;
+      }
+    }
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    padding: 27px 2.5rem;
+  }
+}

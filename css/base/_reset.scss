@@ -1,0 +1,84 @@
+// Resets
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-family;
+}
+
+body * {
+  box-sizing: border-box;
+  font-family: $font-family;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  background: none;
+  box-shadow: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-items-center {
+  display: flex;
+  align-items: center;
+}
+
+.flex-justify-center {
+  display: flex;
+  justify-content: center;
+}
+
+.invisible {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.desktop-only {
+  display: none;
+}
+
+.mobile-only {
+  display: block;
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .desktop-only {
+    display: block;
+  }
+
+  .mobile-only {
+    display: none;
+  }
+}

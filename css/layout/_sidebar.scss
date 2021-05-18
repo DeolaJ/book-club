@@ -1,0 +1,59 @@
+// Sidebar
+
+.sidebar {
+  box-shadow: -10px 0px 40px rgba(0, 0, 0, 0.1);
+
+  &.visible {
+    left: 0;
+  }
+
+  &__menu {
+    &-item {
+      padding: 22px 34px;
+    }
+
+    &-item + &-item {
+      border-top: 1px solid $grey-lighter;
+    }
+
+    h4 {
+      margin-top: 0.875rem;
+      font-size: 0.875rem;
+      font-weight: 700;
+      line-height: 1rem;
+      margin-bottom: 1.75rem;
+    }
+  }
+
+  &__sub-menu {
+    a {
+      font-size: 0.875rem;
+      line-height: 1rem;
+      color: $black;
+    }
+
+    &-item + &-item {
+      margin-top: 13px;
+    }
+
+    &-item a:hover {
+      color: $green;
+    }
+
+    &-item__value {
+      color: $grey;
+      font-size: 0.75rem;
+      line-height: 0.75rem;
+    }
+  }
+
+  ul &__notification {
+    width: 1.5rem;
+    margin-right: -0.5rem;
+    border-radius: 10px;
+  }
+
+  &__logo-group {
+    margin-left: 29px;
+  }
+}

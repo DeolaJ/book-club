@@ -1,0 +1,15 @@
+{
+  "env": {
+    "browser": true,
+    "es2020": true
+  },
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "root": true,
+  "extends": ["eslint:recommended", "plugin:cypress/recommended"],
+  "plugins": ["eslint-plugin-html", "prettier"],
+  "rules": {
+    "prettier/prettier": ["error", {}, { "usePrettierrc": true }]
+  }
+}

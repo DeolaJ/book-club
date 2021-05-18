@@ -1,0 +1,19 @@
+// Back Button
+
+.back-button {
+  height: 70px;
+  width: 70px;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.03);
+  }
+
+  button {
+    height: 100%;
+    width: 100%;
+  }
+
+  img {
+    width: 1rem;
+  }
+}

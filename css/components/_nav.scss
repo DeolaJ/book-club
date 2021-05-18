@@ -1,0 +1,111 @@
+// Nav
+
+.nav {
+  padding: 25px 2.5rem;
+
+  &__menu {
+    justify-content: space-between;
+  }
+
+  &__sidebar-button {
+    position: absolute;
+    height: 70px;
+    width: 70px;
+    top: 0;
+    left: 0;
+
+    img {
+      width: 1rem;
+    }
+  }
+
+  &__menu-item--right {
+    button:not(.nav__avatar) {
+      height: 40px;
+      width: 40px;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.03);
+      }
+
+      .search-icon {
+        height: 15px;
+      }
+
+      img {
+        height: 20px;
+      }
+
+      @media (min-width: $breakpoint-tablet) {
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    button.nav__avatar {
+      position: relative;
+      margin-left: 10px;
+      width: 40px;
+      height: 40px;
+
+      img {
+        top: 58.65%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        width: 57px;
+      }
+
+      @media (min-width: $breakpoint-tablet) {
+        margin-left: 1.25rem;
+        width: 50px;
+        height: 50px;
+
+        img {
+          width: 71px;
+        }
+      }
+    }
+  }
+
+  &__notification {
+    position: relative;
+
+    span {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    @media (min-width: $breakpoint-tablet) {
+      span {
+        top: 5px;
+        right: 5px;
+      }
+    }
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    padding: 15px 30px 15px 80px;
+    position: relative;
+
+    img.nav__menu-logo {
+      width: 40px;
+    }
+
+    &.searching {
+      padding: 0 30px 0 0;
+    }
+
+    &.searching &__searchbar {
+      display: flex;
+      width: 100%;
+      align-items: center;
+    }
+
+    &.searching .searchbar {
+      width: 100%;
+      flex-grow: 1;
+    }
+  }
+}

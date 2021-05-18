@@ -1,0 +1,72 @@
+// Searchbar
+
+.searchbar {
+  display: flex;
+  position: relative;
+  max-width: 100%;
+
+  input {
+    border: 1px solid $grey-light;
+    flex-grow: 1;
+    background-color: $white;
+    padding: 0 22px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    background-color: #f9f9fb;
+    border: 1px solid $grey-light;
+    border-left: none;
+    justify-content: center;
+  }
+
+  img {
+    width: 15px;
+  }
+
+  &__results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: $white;
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.05);
+
+    &.active {
+      border: 1px solid $grey-lighter;
+      border-top: none;
+      padding: 1.25rem 0;
+    }
+
+    button {
+      padding: 0.75rem 30px;
+      color: #999;
+      width: 100%;
+      text-align: left;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    strong {
+      display: inline;
+      margin: 0;
+      color: $black;
+    }
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    min-width: 320px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    min-width: 540px;
+  }
+}

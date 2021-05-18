@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="./img/users.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A dashboard view for the fictional Book Club web application" />
+    <meta name="author" content="Adeola Adeyemo" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css" />
+    <link href="./css/index.scss" rel="stylesheet" />
+    <title>Book Club</title>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="header sticky-container">
+      <!-- Navigation Bar -->
+      <nav class="nav">
+        <ul class="nav__menu flex-items-center">
+          <li class="nav__menu-item">
+            <!-- Hamburger Menu Control -->
+            <div class="mobile-only">
+              <button class="nav__sidebar-button flex-center">
+                <img src="./img/hamburger.svg" alt="Logo" />
+              </button>
+            </div>
+            <div class="logo-group flex-items-center">
+              <img src="./img/users.svg" alt="Logo" class="nav__menu-logo" />
+              <div class="desktop-only">
+                <h1>Book Club</h1>
+                <p>Admin</p>
+              </div>
+            </div>
+          </li>
+          <!-- Search Bar -->
+          <li class="nav__menu-item nav__searchbar desktop-only">
+            <div class="mobile-only">
+              <div class="back-button flex-center">
+                <button>
+                  <img src="./img/back.svg" alt="Back icon" />
+                </button>
+              </div>
+            </div>
+            <div class="searchbar">
+              <label class="invisible" for="search-input">Search</label>
+              <input
+                placeholder="Search books, genres, authors, etc."
+                type="search"
+                id="search-input"
+                aria-label="Search"
+              />
+              <!-- Search Button -->
+              <button class="searchbar-icon">
+                <img src="./img/search-icon.svg" alt="searchbar icon" />
+              </button>
+              <!-- Autocomplete Results -->
+              <div class="searchbar__results hide"></div>
+            </div>
+          </li>
+          <li class="nav__menu-item nav__menu-item--right">
+            <ul class="flex-items-center">
+              <!-- Mobile Search Bar Control -->
+              <li class="nav__menu-item--right-item mobile-only mobile-search-toggle">
+                <button class="flex-center">
+                  <img src="./img/search-icon.svg" alt="searchbar icon" class="search-icon" />
+                </button>
+              </li>
+              <li class="nav__menu-item--right-item">
+                <button class="flex-center">
+                  <img src="./img/books.svg" alt="books icon" />
+                </button>
+              </li>
+              <li class="nav__menu-item--right-item">
+                <button class="nav__notification flex-center">
+                  <img src="./img/notification.svg" alt="notification icon" />
+                  <span class="notification">3</span>
+                </button>
+              </li>
+              <li class="nav__menu-item--right-item">
+                <button class="nav__avatar">
+                  <img src="./img/avatar.svg" alt="avatar" />
+                </button>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main-body">
+      <!-- Overlay for active Sidebar -->
+      <section class="main-body__overlay hide"></section>
+
+      <!-- Sidebar -->
+      <section class="main-body__sidebar sidebar sticky-container">
+        <div class="mobile-only">
+          <div class="back-button flex-center">
+            <button>
+              <img src="./img/back.svg" alt="Back icon" />
+            </button>
+          </div>
+          <div class="sidebar__logo-group logo-group flex-items-center">
+            <img src="./img/users.svg" alt="Logo" />
+            <div>
+              <h1>Book Club</h1>
+              <p>Admin</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <div>
+          <ul class="sidebar__menu">
+            <li class="sidebar__menu-item">
+              <ul class="sidebar__sub-menu">
+                <li class="sidebar__sub-menu-item">
+                  <a href="#">Home</a>
+                </li>
+                <li class="sidebar__sub-menu-item">
+                  <a href="#">Profile</a>
+                </li>
+                <li class="sidebar__sub-menu-item horizontal-list">
+                  <a href="#">Notifications</a>
+                  <span class="sidebar__notification notification">3</span>
+                </li>
+              </ul>
+            </li>
+            <li class="sidebar__menu-item">
+              <h4>Explore</h4>
+              <ul class="sidebar__sub-menu">
+                <li class="sidebar__sub-menu-item horizontal-list">
+                  <a href="#">Books</a>
+                  <span class="sidebar__sub-menu-item__value">273</span>
+                </li>
+                <li class="sidebar__sub-menu-item horizontal-list">
+                  <a href="#">Genres</a>
+                  <span class="sidebar__sub-menu-item__value">42</span>
+                </li>
+                <li class="sidebar__sub-menu-item horizontal-list">
+                  <a href="#">Authors</a>
+                  <span class="sidebar__sub-menu-item__value">106</span>
+                </li>
+              </ul>
+            </li>
+            <li class="sidebar__menu-item">
+              <h4>My Books</h4>
+              <ul class="sidebar__sub-menu">
+                <li class="sidebar__sub-menu-item horizontal-list">
+                  <a href="#">Queued</a>
+                  <span class="sidebar__sub-menu-item__value">3</span>
+                </li>
+                <li class="sidebar__sub-menu-item horizontal-list">
+                  <a href="#">Currently Borrowed</a>
+                  <span class="sidebar__sub-menu-item__value">0</span>
+                </li>
+                <li class="sidebar__sub-menu-item horizontal-list">
+                  <a href="#">Favourites</a>
+                  <span class="sidebar__sub-menu-item__value">19</span>
+                </li>
+                <li class="sidebar__sub-menu-item">
+                  <a href="#">History</a>
+                </li>
+              </ul>
+            </li>
+            <li class="sidebar__menu-item">
+              <h4>Admin</h4>
+              <ul class="sidebar__sub-menu">
+                <li class="sidebar__sub-menu-item horizontal-list">
+                  <a href="#">Book Requests</a>
+                  <span class="sidebar__notification notification">2</span>
+                </li>
+                <li class="sidebar__sub-menu-item horizontal-list">
+                  <a href="#">Members</a>
+                  <span class="sidebar__sub-menu-item__value">34</span>
+                </li>
+                <li class="sidebar__sub-menu-item">
+                  <a href="#">Library Settings</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="main-body__content content">
+        <!-- Default View for Books -->
+        <div class="main-body__default-view">
+          <article class="content__category featured-books">
+            <h2 class="desktop-only">Featured Books</h2>
+            <ul class="books-carousel"></ul>
+          </article>
+
+          <article class="content__category recently-added">
+            <h2>Recently Added</h2>
+            <ul class="books-grid"></ul>
+          </article>
+
+          <article class="content__category all-books">
+            <h2>All Books</h2>
+            <ul class="books-grid"></ul>
+          </article>
+        </div>
+
+        <!-- Filtered View for Books -->
+        <div class="main-body__filtered-view hide">
+          <article class="content__category filtered-books">
+            <!-- Return Button for Search -->
+            <div class="back-button flex-center">
+              <button>
+                <img src="./img/back.svg" alt="Back icon" />
+              </button>
+            </div>
+            <h2></h2>
+            <ul></ul>
+          </article>
+        </div>
+      </section>
+    </main>
+    <script src="./scripts/index.js"></script>
+  </body>
+</html>
